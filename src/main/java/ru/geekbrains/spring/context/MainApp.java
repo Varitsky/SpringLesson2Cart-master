@@ -13,7 +13,6 @@ public class MainApp {
         boolean isTrue = true;
         intro();
         Cart cart = context.getBean("cart", Cart.class);
-        System.out.println(cart.show() + "\n");
 
         Scanner scanner = new Scanner(System.in);
         while (isTrue) {
@@ -40,8 +39,9 @@ public class MainApp {
                 System.out.println("Введите НОМЕР товара 1,2,3,4,5");
                 int id = scanner.nextInt();
                 cart.remove(id);
-                System.out.println("Обновленная корзина:");
-                System.out.println(cart.show());
+
+                System.out.println("Обновленная корзина");
+                System.out.println(cart.show() + "\n");
                 intro();
             }
 
@@ -70,6 +70,5 @@ public class MainApp {
         System.out.println("Показать товар по ID - нажмите 1");
         System.out.println("Добавить товар - нажмите 2");
         System.out.println("Удалить товар - нажмите 3\n");
-        System.out.println("Сейчас в корзине:");
     }
 }
